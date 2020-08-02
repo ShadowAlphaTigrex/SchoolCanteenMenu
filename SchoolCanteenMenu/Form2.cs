@@ -66,21 +66,40 @@ namespace SchoolCanteenMenu
 
         private void MTeaCheckBox_Checked(object sender, EventArgs e)
         {
+            //The checkboxes that are checked are called "current"
             CheckBox current = sender as CheckBox;
+            //The cost array follows the current (parallel array)
             int indexcurrent = Array.IndexOf(currentChk, current);
+            //Declaring the variable for cost
             int price = cost[indexcurrent];
+            //Declaring a new list
             List<CheckBox> SelectedMenu = new List<CheckBox>();
-
+           
+            //When it's checked, it'll be added in a list 
             if (current.Checked)
             {
                 SelectedMenu.Add(current);
             }
+            //If it's not, then it'll be remove
             else
             {
                 SelectedMenu.Remove(current);
             }
 
+           //When the list has more than 3, the label will be shown a text
+            if (SelectedMenu.Count > 3)
+            {
+                label1.Text = "TOO MUCH";
+
+            }
+            //If not, it'll add the cost 
+            else
+            {
+                sum = price + sum;
+                lblMTeaCost.Text = "\r\n" + "$" + sum.ToString();
+            }
             
+        }
 
 
            /* if (current.Checked)
@@ -137,5 +156,5 @@ namespace SchoolCanteenMenu
         */
 
 
-    }
+    
 }
