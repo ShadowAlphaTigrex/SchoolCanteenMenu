@@ -57,11 +57,10 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.chbMuffin = new System.Windows.Forms.CheckBox();
             this.grbLunchMenu = new System.Windows.Forms.GroupBox();
-            this.grbList = new System.Windows.Forms.GroupBox();
             this.lblMTeaCost = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.lblMTea = new System.Windows.Forms.Label();
-            this.lblMTeaOutput = new System.Windows.Forms.Label();
+            this.lbCOItems = new System.Windows.Forms.ListBox();
+            this.grbList = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.grbSelectMenu.SuspendLayout();
             this.grbLunchSelection.SuspendLayout();
             this.grbTeaMenu.SuspendLayout();
@@ -69,7 +68,6 @@
             this.groupBox1.SuspendLayout();
             this.grbMuffin.SuspendLayout();
             this.grbList.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // grbSelectMenu
@@ -79,7 +77,7 @@
             this.grbSelectMenu.Controls.Add(this.btnMTea);
             this.grbSelectMenu.Location = new System.Drawing.Point(12, 12);
             this.grbSelectMenu.Name = "grbSelectMenu";
-            this.grbSelectMenu.Size = new System.Drawing.Size(172, 191);
+            this.grbSelectMenu.Size = new System.Drawing.Size(226, 191);
             this.grbSelectMenu.TabIndex = 0;
             this.grbSelectMenu.TabStop = false;
             this.grbSelectMenu.Text = "Select Menu ";
@@ -136,6 +134,7 @@
             // 
             // grbTeaMenu
             // 
+            this.grbTeaMenu.Controls.Add(this.label1);
             this.grbTeaMenu.Controls.Add(this.chkCPuff);
             this.grbTeaMenu.Controls.Add(this.chkBrownie);
             this.grbTeaMenu.Controls.Add(this.chkSlice);
@@ -149,7 +148,7 @@
             this.grbTeaMenu.Controls.Add(this.grbMuffin);
             this.grbTeaMenu.Controls.Add(this.chbMuffin);
             this.grbTeaMenu.Enabled = false;
-            this.grbTeaMenu.Location = new System.Drawing.Point(197, 12);
+            this.grbTeaMenu.Location = new System.Drawing.Point(244, 12);
             this.grbTeaMenu.Name = "grbTeaMenu";
             this.grbTeaMenu.Size = new System.Drawing.Size(388, 600);
             this.grbTeaMenu.TabIndex = 1;
@@ -390,72 +389,62 @@
             // grbLunchMenu
             // 
             this.grbLunchMenu.Enabled = false;
-            this.grbLunchMenu.Location = new System.Drawing.Point(591, 12);
+            this.grbLunchMenu.Location = new System.Drawing.Point(638, 12);
             this.grbLunchMenu.Name = "grbLunchMenu";
-            this.grbLunchMenu.Size = new System.Drawing.Size(405, 600);
+            this.grbLunchMenu.Size = new System.Drawing.Size(358, 600);
             this.grbLunchMenu.TabIndex = 2;
             this.grbLunchMenu.TabStop = false;
             this.grbLunchMenu.Text = "Lunch";
             // 
-            // grbList
-            // 
-            this.grbList.Controls.Add(this.lblMTeaCost);
-            this.grbList.Controls.Add(this.groupBox3);
-            this.grbList.Location = new System.Drawing.Point(12, 209);
-            this.grbList.Name = "grbList";
-            this.grbList.Size = new System.Drawing.Size(172, 403);
-            this.grbList.TabIndex = 3;
-            this.grbList.TabStop = false;
-            this.grbList.Text = "Check Out List ";
-            // 
             // lblMTeaCost
             // 
             this.lblMTeaCost.AutoSize = true;
-            this.lblMTeaCost.Location = new System.Drawing.Point(14, 175);
+            this.lblMTeaCost.Location = new System.Drawing.Point(87, 210);
             this.lblMTeaCost.Name = "lblMTeaCost";
             this.lblMTeaCost.Size = new System.Drawing.Size(31, 13);
             this.lblMTeaCost.TabIndex = 7;
             this.lblMTeaCost.Text = "Total";
             // 
-            // groupBox3
+            // lbCOItems
             // 
-            this.groupBox3.Controls.Add(this.lblMTea);
-            this.groupBox3.Controls.Add(this.lblMTeaOutput);
-            this.groupBox3.Location = new System.Drawing.Point(6, 26);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(148, 131);
-            this.groupBox3.TabIndex = 6;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Morning Tea Selection";
+            this.lbCOItems.FormattingEnabled = true;
+            this.lbCOItems.Location = new System.Drawing.Point(6, 19);
+            this.lbCOItems.Name = "lbCOItems";
+            this.lbCOItems.Size = new System.Drawing.Size(214, 173);
+            this.lbCOItems.TabIndex = 8;
             // 
-            // lblMTea
+            // grbList
             // 
-            this.lblMTea.AutoSize = true;
-            this.lblMTea.Location = new System.Drawing.Point(8, 25);
-            this.lblMTea.Name = "lblMTea";
-            this.lblMTea.Size = new System.Drawing.Size(76, 13);
-            this.lblMTea.TabIndex = 13;
-            this.lblMTea.Text = "Food Selected";
+            this.grbList.Controls.Add(this.lbCOItems);
+            this.grbList.Controls.Add(this.lblMTeaCost);
+            this.grbList.Location = new System.Drawing.Point(12, 209);
+            this.grbList.Name = "grbList";
+            this.grbList.Size = new System.Drawing.Size(226, 403);
+            this.grbList.TabIndex = 3;
+            this.grbList.TabStop = false;
+            this.grbList.Text = "Check Out List ";
             // 
-            // lblMTeaOutput
+            // label1
             // 
-            this.lblMTeaOutput.AutoSize = true;
-            this.lblMTeaOutput.Location = new System.Drawing.Point(8, 25);
-            this.lblMTeaOutput.Name = "lblMTeaOutput";
-            this.lblMTeaOutput.Size = new System.Drawing.Size(0, 13);
-            this.lblMTeaOutput.TabIndex = 5;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(247, 96);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "label1";
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1006, 626);
+            this.ClientSize = new System.Drawing.Size(936, 626);
             this.Controls.Add(this.grbList);
             this.Controls.Add(this.grbLunchMenu);
             this.Controls.Add(this.grbTeaMenu);
             this.Controls.Add(this.grbSelectMenu);
             this.Name = "Form2";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.grbSelectMenu.ResumeLayout(false);
             this.grbLunchSelection.ResumeLayout(false);
             this.grbTeaMenu.ResumeLayout(false);
@@ -468,8 +457,6 @@
             this.grbMuffin.PerformLayout();
             this.grbList.ResumeLayout(false);
             this.grbList.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -484,7 +471,6 @@
         private System.Windows.Forms.Button btnMTea;
         private System.Windows.Forms.GroupBox grbTeaMenu;
         private System.Windows.Forms.GroupBox grbLunchMenu;
-        private System.Windows.Forms.GroupBox grbList;
         private System.Windows.Forms.GroupBox grbMuffin;
         private System.Windows.Forms.CheckBox chbMuffin;
         private System.Windows.Forms.RadioButton radioButton2;
@@ -506,9 +492,9 @@
         private System.Windows.Forms.CheckBox chkSlice;
         private System.Windows.Forms.CheckBox chkCSwirl;
         private System.Windows.Forms.CheckBox chkSPinwheel;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label lblMTeaOutput;
-        private System.Windows.Forms.Label lblMTea;
         private System.Windows.Forms.Label lblMTeaCost;
+        private System.Windows.Forms.ListBox lbCOItems;
+        private System.Windows.Forms.GroupBox grbList;
+        private System.Windows.Forms.Label label1;
     }
 }
