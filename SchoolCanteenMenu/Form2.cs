@@ -19,6 +19,7 @@ namespace SchoolCanteenMenu
         int[] cost = { 4, 3, 3, 3, 3, 3 };
         int sum = 0;
         int subtract;
+
         //Declaring a new list
         List<CheckBox> SelectedMenu = new List<CheckBox>();
 
@@ -83,26 +84,27 @@ namespace SchoolCanteenMenu
                 SelectedMenu.Add(current);
                 label1.Text = "t " + SelectedMenu.Count;
                 sum = price + sum;
+                lblMTeaCost.Text = "\r\n" + "$" + sum.ToString();
             }
             //If it's not, then it'll be remove
             else
             { 
                 SelectedMenu.Remove(current);
                 label1.Text = "t " + SelectedMenu.Count;
-                subtract = sum - price;
+               sum = sum - price;
+                lblMTeaCost.Text = "\r\n" + "$" + sum.ToString();
             }
 
            //When the list has more than 3, the label will be shown a text
             if (SelectedMenu.Count > 3)
             {
                 label1.Text = "TOO MUCH";
-                subtract = sum - price;
+                sum = sum - price;
+                lblMTeaCost.Text = "\r\n" + "$" +sum .ToString();
             }
             //If not, it'll add the cost 
             else
-            {
-              
-                lblMTeaCost.Text = "\r\n" + "$" + sum.ToString();
+            {  
             }
             
         }
