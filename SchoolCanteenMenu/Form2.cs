@@ -99,10 +99,9 @@ namespace SchoolCanteenMenu
             if (SelectedMenu.Count > 3)
             {
                 label1.Text = "TOO MUCH";
-                sum = sum - price;
-                lblMTeaCost.Text = "\r\n" + "$" +sum .ToString();
+                current.Checked = false;
             }
-            //If not, it'll add the cost 
+            //If not, nothing happens.
             else
             {  
             }
