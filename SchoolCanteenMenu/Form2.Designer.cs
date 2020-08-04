@@ -35,6 +35,7 @@
             this.btnWeek1 = new System.Windows.Forms.Button();
             this.btnMTea = new System.Windows.Forms.Button();
             this.grbTeaMenu = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.chkCPuff = new System.Windows.Forms.CheckBox();
             this.chkBrownie = new System.Windows.Forms.CheckBox();
             this.chkSlice = new System.Windows.Forms.CheckBox();
@@ -60,7 +61,6 @@
             this.lblMTeaCost = new System.Windows.Forms.Label();
             this.lbCOItems = new System.Windows.Forms.ListBox();
             this.grbList = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.grbSelectMenu.SuspendLayout();
             this.grbLunchSelection.SuspendLayout();
             this.grbTeaMenu.SuspendLayout();
@@ -86,7 +86,7 @@
             // 
             this.btnLunch.Location = new System.Drawing.Point(17, 48);
             this.btnLunch.Name = "btnLunch";
-            this.btnLunch.Size = new System.Drawing.Size(75, 23);
+            this.btnLunch.Size = new System.Drawing.Size(83, 23);
             this.btnLunch.TabIndex = 1;
             this.btnLunch.Text = "Lunch ";
             this.btnLunch.UseVisualStyleBackColor = true;
@@ -154,6 +154,15 @@
             this.grbTeaMenu.TabIndex = 1;
             this.grbTeaMenu.TabStop = false;
             this.grbTeaMenu.Text = "Morning Tea";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(247, 96);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "label1";
             // 
             // chkCPuff
             // 
@@ -423,15 +432,6 @@
             this.grbList.TabIndex = 3;
             this.grbList.TabStop = false;
             this.grbList.Text = "Check Out List ";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(247, 96);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "label1";
             // 
             // Form2
             // 

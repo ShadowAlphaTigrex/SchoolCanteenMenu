@@ -82,7 +82,7 @@ namespace SchoolCanteenMenu
             if (current.Checked)
             {
                 SelectedMenu.Add(current);
-                label1.Text = "t " + SelectedMenu.Count;
+                lbCOItems.Items.Add(current.Text);
                 sum = price + sum;
                 lblMTeaCost.Text = "\r\n" + "$" + sum.ToString();
             }
@@ -90,15 +90,16 @@ namespace SchoolCanteenMenu
             else
             { 
                 SelectedMenu.Remove(current);
-                label1.Text = "t " + SelectedMenu.Count;
-               sum = sum - price;
+                lbCOItems.Items.Remove(current.Text);
+                sum = sum - price;
                 lblMTeaCost.Text = "\r\n" + "$" + sum.ToString();
             }
 
-           //When the list has more than 3, the label will be shown a text
+           //When the list has more than 3, the message box will show an error.
             if (SelectedMenu.Count > 3)
             {
-                label1.Text = "TOO MUCH";
+                MessageBox.Show("Only select 3 items.");
+                lbCOItems.Items.Remove(current.Text);
                 current.Checked = false;
             }
             //If not, nothing happens.
