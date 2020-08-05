@@ -14,7 +14,7 @@ namespace SchoolCanteenMenu
     public partial class Form2 : Form
     {
         string textToShow;
-        CheckBox[] currentChk = new CheckBox[6];
+        CheckBox[] currentChk = new CheckBox[9];
 
         int[] cost = { 4, 3, 3, 3, 3, 3, 4, 4, 3};
         int sum = 0;
@@ -40,6 +40,7 @@ namespace SchoolCanteenMenu
             currentChk[6] = chkSandwich;
             currentChk[7] = chkBagel;
             currentChk[8] = chkMuffin;
+
 
             /* int indexCRolls = Array.IndexOf(currentChk, chkCRolls);
              int indexSPinwheel = Array.IndexOf(currentChk, chkSPinwheel);
@@ -120,27 +121,57 @@ namespace SchoolCanteenMenu
             {
                 grbSandwich.Enabled = true;
             }
-        }
-
-
-           /* if (current.Checked)
- 
+            else
             {
-                lbCOItems.Items.Add(current.Text);
-                sum = price + sum;
-                lblMTeaCost.Text = "\r\n" + "$" + sum.ToString();
+                grbSandwich.Enabled = false;
             }
 
-            else 
+            if (chkBagel.Checked)
             {
-                lbCOItems.Items.Remove(current.Text);
-                subtract = sum - price;
-                lblMTeaCost.Text = "$" + subtract.ToString();
-               
+                grbBagel.Enabled = true;
             }
-            */
-            
+            else
+            {
+                grbBagel.Enabled = false;
+            }
+
+            if (chkMuffin.Checked)
+            {
+                grbMuffin.Enabled = true;
+            }
+            else
+            {
+                grbMuffin.Enabled = false;
+            }
         }
+
+       
+
+        
+
+
+
+
+
+
+        /* if (current.Checked)
+
+         {
+             lbCOItems.Items.Add(current.Text);
+             sum = price + sum;
+             lblMTeaCost.Text = "\r\n" + "$" + sum.ToString();
+         }
+
+         else 
+         {
+             lbCOItems.Items.Remove(current.Text);
+             subtract = sum - price;
+             lblMTeaCost.Text = "$" + subtract.ToString();
+
+         }
+         */
+
+    }
            
            
        

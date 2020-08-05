@@ -42,7 +42,7 @@
             this.chkSPinwheel = new System.Windows.Forms.CheckBox();
             this.chkCRolls = new System.Windows.Forms.CheckBox();
             this.chkBagel = new System.Windows.Forms.CheckBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.grbBagel = new System.Windows.Forms.GroupBox();
             this.radioButton8 = new System.Windows.Forms.RadioButton();
             this.radioButton9 = new System.Windows.Forms.RadioButton();
             this.grbSandwich = new System.Windows.Forms.GroupBox();
@@ -51,7 +51,6 @@
             this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.chkSandwich = new System.Windows.Forms.CheckBox();
             this.grbMuffin = new System.Windows.Forms.GroupBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
@@ -60,10 +59,11 @@
             this.lblMTeaCost = new System.Windows.Forms.Label();
             this.lbCOItems = new System.Windows.Forms.ListBox();
             this.grbList = new System.Windows.Forms.GroupBox();
+            this.chkSandwich = new System.Windows.Forms.CheckBox();
             this.grbSelectMenu.SuspendLayout();
             this.grbLunchSelection.SuspendLayout();
             this.grbTeaMenu.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.grbBagel.SuspendLayout();
             this.grbSandwich.SuspendLayout();
             this.grbMuffin.SuspendLayout();
             this.grbList.SuspendLayout();
@@ -133,6 +133,7 @@
             // 
             // grbTeaMenu
             // 
+            this.grbTeaMenu.Controls.Add(this.chkSandwich);
             this.grbTeaMenu.Controls.Add(this.chkCPuff);
             this.grbTeaMenu.Controls.Add(this.chkBrownie);
             this.grbTeaMenu.Controls.Add(this.chkSlice);
@@ -140,9 +141,8 @@
             this.grbTeaMenu.Controls.Add(this.chkSPinwheel);
             this.grbTeaMenu.Controls.Add(this.chkCRolls);
             this.grbTeaMenu.Controls.Add(this.chkBagel);
-            this.grbTeaMenu.Controls.Add(this.groupBox2);
+            this.grbTeaMenu.Controls.Add(this.grbBagel);
             this.grbTeaMenu.Controls.Add(this.grbSandwich);
-            this.grbTeaMenu.Controls.Add(this.chkSandwich);
             this.grbTeaMenu.Controls.Add(this.grbMuffin);
             this.grbTeaMenu.Controls.Add(this.chkMuffin);
             this.grbTeaMenu.Enabled = false;
@@ -230,15 +230,15 @@
             this.chkBagel.UseVisualStyleBackColor = true;
             this.chkBagel.CheckedChanged += new System.EventHandler(this.MTeaCheckBox_Checked);
             // 
-            // groupBox2
+            // grbBagel
             // 
-            this.groupBox2.Controls.Add(this.radioButton8);
-            this.groupBox2.Controls.Add(this.radioButton9);
-            this.groupBox2.Location = new System.Drawing.Point(40, 372);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(333, 63);
-            this.groupBox2.TabIndex = 5;
-            this.groupBox2.TabStop = false;
+            this.grbBagel.Controls.Add(this.radioButton8);
+            this.grbBagel.Controls.Add(this.radioButton9);
+            this.grbBagel.Location = new System.Drawing.Point(40, 372);
+            this.grbBagel.Name = "grbBagel";
+            this.grbBagel.Size = new System.Drawing.Size(333, 63);
+            this.grbBagel.TabIndex = 5;
+            this.grbBagel.TabStop = false;
             // 
             // radioButton8
             // 
@@ -331,17 +331,6 @@
             this.radioButton4.Text = "Ham, tomato, egg, lettuce and mayo ";
             this.radioButton4.UseVisualStyleBackColor = true;
             // 
-            // chkSandwich
-            // 
-            this.chkSandwich.AutoSize = true;
-            this.chkSandwich.Location = new System.Drawing.Point(23, 188);
-            this.chkSandwich.Name = "chkSandwich";
-            this.chkSandwich.Size = new System.Drawing.Size(94, 17);
-            this.chkSandwich.TabIndex = 3;
-            this.chkSandwich.Text = "Sandwich - $4";
-            this.chkSandwich.UseVisualStyleBackColor = true;
-            this.chkSandwich.CheckedChanged += new System.EventHandler(this.MTeaCheckBox_Checked);
-            // 
             // grbMuffin
             // 
             this.grbMuffin.Controls.Add(this.radioButton2);
@@ -423,11 +412,21 @@
             this.grbList.TabStop = false;
             this.grbList.Text = "Check Out List ";
             // 
+            // chkSandwich
+            // 
+            this.chkSandwich.AutoSize = true;
+            this.chkSandwich.Location = new System.Drawing.Point(23, 197);
+            this.chkSandwich.Name = "chkSandwich";
+            this.chkSandwich.Size = new System.Drawing.Size(94, 17);
+            this.chkSandwich.TabIndex = 13;
+            this.chkSandwich.Text = "Sandwich - $4";
+            this.chkSandwich.UseVisualStyleBackColor = true;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(936, 626);
+            this.ClientSize = new System.Drawing.Size(1007, 626);
             this.Controls.Add(this.grbList);
             this.Controls.Add(this.grbLunchMenu);
             this.Controls.Add(this.grbTeaMenu);
@@ -439,8 +438,8 @@
             this.grbLunchSelection.ResumeLayout(false);
             this.grbTeaMenu.ResumeLayout(false);
             this.grbTeaMenu.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.grbBagel.ResumeLayout(false);
+            this.grbBagel.PerformLayout();
             this.grbSandwich.ResumeLayout(false);
             this.grbSandwich.PerformLayout();
             this.grbMuffin.ResumeLayout(false);
@@ -468,9 +467,8 @@
         private System.Windows.Forms.GroupBox grbSandwich;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.CheckBox chkSandwich;
         private System.Windows.Forms.CheckBox chkBagel;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox grbBagel;
         private System.Windows.Forms.RadioButton radioButton8;
         private System.Windows.Forms.RadioButton radioButton9;
         private System.Windows.Forms.RadioButton radioButton7;
@@ -485,5 +483,6 @@
         private System.Windows.Forms.Label lblMTeaCost;
         private System.Windows.Forms.ListBox lbCOItems;
         private System.Windows.Forms.GroupBox grbList;
+        private System.Windows.Forms.CheckBox chkSandwich;
     }
 }
