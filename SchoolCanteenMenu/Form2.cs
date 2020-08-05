@@ -16,9 +16,8 @@ namespace SchoolCanteenMenu
         string textToShow;
         CheckBox[] currentChk = new CheckBox[6];
 
-        int[] cost = { 4, 3, 3, 3, 3, 3 };
+        int[] cost = { 4, 3, 3, 3, 3, 3, 4, 4, 3};
         int sum = 0;
-        int subtract;
 
         //Declaring a new list
         List<CheckBox> SelectedMenu = new List<CheckBox>();
@@ -38,7 +37,9 @@ namespace SchoolCanteenMenu
             currentChk[3] = chkSlice;
             currentChk[4] = chkBrownie;
             currentChk[5] = chkCPuff;
-
+            currentChk[6] = chkSandwich;
+            currentChk[7] = chkBagel;
+            currentChk[8] = chkMuffin;
 
             /* int indexCRolls = Array.IndexOf(currentChk, chkCRolls);
              int indexSPinwheel = Array.IndexOf(currentChk, chkSPinwheel);
@@ -78,19 +79,26 @@ namespace SchoolCanteenMenu
             int price = cost[indexcurrent];
            
            
-            //When it's checked, it'll be added in a list 
+            //When it's checked, the selected items will be added in a list 
             if (current.Checked)
             {
+                //When it's checked, the current (selected) checkbox will be added in a list 
                 SelectedMenu.Add(current);
+                //Displays the items in a list box 
                 lbCOItems.Items.Add(current.Text);
+                //It'll add the item's cost
                 sum = price + sum;
+                //Display the total cost of the selected items
                 lblMTeaCost.Text = "\r\n" + "$" + sum.ToString();
             }
-            //If it's not, then it'll be remove
+            //If it's not, then it'll be remove from the list. 
             else
-            { 
+            {
+                //When it's unchecked, the current (unselected) checkbox will be remove from the list 
                 SelectedMenu.Remove(current);
+                //Removes the unselected item from the list box 
                 lbCOItems.Items.Remove(current.Text);
+                //It'll subtract the item's cost so it only display the selected item's total cost
                 sum = sum - price;
                 lblMTeaCost.Text = "\r\n" + "$" + sum.ToString();
             }
@@ -98,8 +106,9 @@ namespace SchoolCanteenMenu
            //When the list has more than 3, the message box will show an error.
             if (SelectedMenu.Count > 3)
             {
+                //Displays the message box for error
                 MessageBox.Show("Only select 3 items.");
-                lbCOItems.Items.Remove(current.Text);
+                //After message box is closed, it'll automatically unselect the checkboxes
                 current.Checked = false;
             }
             //If not, nothing happens.
@@ -107,6 +116,10 @@ namespace SchoolCanteenMenu
             {  
             }
             
+            if (chkSandwich.Checked)
+            {
+                grbSandwich.Enabled = true;
+            }
         }
 
 
