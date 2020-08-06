@@ -15,13 +15,15 @@ namespace SchoolCanteenMenu
     {
         string textToShow;
         CheckBox[] currentChk = new CheckBox[15];
+        CheckBox[] W1currentChk = new CheckBox[5];
         //RadioButton sandwichChoice = new RadioButton();
         int[] cost = { 4, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 3, 3};
+        int[] W1cost = { 5, 5, 5, 5, 5};
         int sum = 0;
 
         //Declaring a new list
         List<CheckBox> SelectedMenu = new List<CheckBox>();
-
+        List<CheckBox> W1SelectedMenu = new List<CheckBox>();
 
         public Form2(string textData)
         {
@@ -47,7 +49,11 @@ namespace SchoolCanteenMenu
             currentChk[13] = chkMuffinSav;
             currentChk[14] = chkMuffinSwe;
 
-
+            W1currentChk[0] = chkMonday1;
+            W1currentChk[1] = chkTuesday1;
+            W1currentChk[2] = chkWednesday1;
+            W1currentChk[3] = chkThursday1;
+            W1currentChk[4] = chkFriday1;
 
 
             /* int indexCRolls = Array.IndexOf(currentChk, chkCRolls);
@@ -74,8 +80,23 @@ namespace SchoolCanteenMenu
             grbTeaMenu.Enabled = false;
             grbLunchSelection.Visible = true;
             grbLunchSelection.Enabled = true;
+            grbLunchMenu.Enabled = true;
+        }
+
+        private void btnWeek1_Click(object sender, EventArgs e)
+        {
+          
+            grbWeek1.Enabled = true;
+            grbWeek2.Enabled = false;
 
         }
+
+        private void btnWeek2_Click(object sender, EventArgs e)
+        {
+            grbWeek1.Enabled = false;
+            grbWeek2.Enabled = true;
+        }
+
 
 
         public void MTeaCheckBox_Checked(object sender, EventArgs e)
@@ -127,33 +148,79 @@ namespace SchoolCanteenMenu
            
         }
 
-       /* private void chkSandwich_Checked(object sender, EventArgs e)
+        public void chkW1_Checked(object sender, EventArgs e)
         {
-            
-            if (chkSandwich.Checked)
+            CheckBox W1current = sender as CheckBox;
+            int indexW1current = Array.IndexOf(W1currentChk, W1current);
+            int W1price = W1cost[indexW1current];
+
+            if (W1current.Checked)
             {
-                grbSandwich.Enabled= true;
+                //When it's checked, the current (selected) checkbox will be added in a list 
+                W1SelectedMenu.Add(W1current);
+                //Displays the items in a list box 
+                lbCOItems.Items.Add(W1current.Text);
+                //It'll add the item's cost
+                sum = W1price + sum;
+                //Display the total cost of the selected items
+                lblMTeaCost.Text = "\r\n" + "$" + sum.ToString();
             }
             else
             {
-                grbSandwich.Enabled = false;
+                //When it's unchecked, the current (unselected) checkbox will be remove from the list 
+                W1SelectedMenu.Remove(W1current);
+                //Removes the unselected item from the list box 
+                lbCOItems.Items.Remove(W1current.Text);
+                //It'll subtract the item's cost so it only display the selected item's total cost
+                sum = sum - W1price;
+                lblMTeaCost.Text = "\r\n" + "$" + sum.ToString();
+            }
+
+            if (W1SelectedMenu.Count > 1)
+            {
+                //Displays the message box for error
+                MessageBox.Show("Only select 1 item1.");
+                //After message box is closed, it'll automatically unselect the checkboxes
+                W1current.Checked = false;
+            }
+            //If not, nothing happens.
+            else
+            {
             }
         }
 
-        public void SandwichRbtn_Checked(object sender, EventArgs e)
-        {
-            RadioButton sanchoice = sender as RadioButton;
-            if (sanchoice.Checked)
-            {
-                lbCOItems.Items.Add("Sandwich - $4 =" + sanchoice.Text);
-            }
-            else
-            {
-                lbCOItems.Items.Remove("Sandwich - $4 =" + sanchoice.Text);
-            }
-        } */
 
-        
+
+
+
+
+        /* private void chkSandwich_Checked(object sender, EventArgs e)
+         {
+
+             if (chkSandwich.Checked)
+             {
+                 grbSandwich.Enabled= true;
+             }
+             else
+             {
+                 grbSandwich.Enabled = false;
+             }
+         }
+
+         public void SandwichRbtn_Checked(object sender, EventArgs e)
+         {
+             RadioButton sanchoice = sender as RadioButton;
+             if (sanchoice.Checked)
+             {
+                 lbCOItems.Items.Add("Sandwich - $4 =" + sanchoice.Text);
+             }
+             else
+             {
+                 lbCOItems.Items.Remove("Sandwich - $4 =" + sanchoice.Text);
+             }
+         } */
+
+
 
 
 

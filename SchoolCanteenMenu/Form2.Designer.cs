@@ -35,6 +35,8 @@
             this.btnWeek1 = new System.Windows.Forms.Button();
             this.btnMTea = new System.Windows.Forms.Button();
             this.grbTeaMenu = new System.Windows.Forms.GroupBox();
+            this.chkMuffinSwe = new System.Windows.Forms.CheckBox();
+            this.chkBagelTOCAT = new System.Windows.Forms.CheckBox();
             this.chkSandwichHTELM = new System.Windows.Forms.CheckBox();
             this.chkSandwichBLT = new System.Windows.Forms.CheckBox();
             this.chkSandwichVege = new System.Windows.Forms.CheckBox();
@@ -48,31 +50,22 @@
             this.chkCRolls = new System.Windows.Forms.CheckBox();
             this.chkBagelSCAT = new System.Windows.Forms.CheckBox();
             this.chkMuffinSav = new System.Windows.Forms.CheckBox();
-            this.grbBagel = new System.Windows.Forms.GroupBox();
-            this.radioButton8 = new System.Windows.Forms.RadioButton();
-            this.radioButton9 = new System.Windows.Forms.RadioButton();
-            this.grbSandwich = new System.Windows.Forms.GroupBox();
-            this.rbtnCCSA = new System.Windows.Forms.RadioButton();
-            this.rbtnVegetarian = new System.Windows.Forms.RadioButton();
-            this.rbtnBLT = new System.Windows.Forms.RadioButton();
-            this.rbtnBCLO = new System.Windows.Forms.RadioButton();
-            this.rbtnHTELM = new System.Windows.Forms.RadioButton();
-            this.grbMuffin = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.grbLunchMenu = new System.Windows.Forms.GroupBox();
+            this.grbWeek2 = new System.Windows.Forms.GroupBox();
+            this.grbWeek1 = new System.Windows.Forms.GroupBox();
+            this.chkFriday1 = new System.Windows.Forms.CheckBox();
+            this.chkThursday1 = new System.Windows.Forms.CheckBox();
+            this.chkWednesday1 = new System.Windows.Forms.CheckBox();
+            this.chkTuesday1 = new System.Windows.Forms.CheckBox();
+            this.chkMonday1 = new System.Windows.Forms.CheckBox();
             this.lblMTeaCost = new System.Windows.Forms.Label();
             this.lbCOItems = new System.Windows.Forms.ListBox();
             this.grbList = new System.Windows.Forms.GroupBox();
-            this.chkBagelTOCAT = new System.Windows.Forms.CheckBox();
-            this.chkMuffinSwe = new System.Windows.Forms.CheckBox();
             this.grbSelectMenu.SuspendLayout();
             this.grbLunchSelection.SuspendLayout();
             this.grbTeaMenu.SuspendLayout();
-            this.grbBagel.SuspendLayout();
-            this.grbSandwich.SuspendLayout();
-            this.grbMuffin.SuspendLayout();
             this.grbLunchMenu.SuspendLayout();
+            this.grbWeek1.SuspendLayout();
             this.grbList.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -118,6 +111,7 @@
             this.btnWeek2.TabIndex = 3;
             this.btnWeek2.Text = "Week 2";
             this.btnWeek2.UseVisualStyleBackColor = true;
+            this.btnWeek2.Click += new System.EventHandler(this.btnWeek2_Click);
             // 
             // btnWeek1
             // 
@@ -127,6 +121,7 @@
             this.btnWeek1.TabIndex = 2;
             this.btnWeek1.Text = "Week 1";
             this.btnWeek1.UseVisualStyleBackColor = true;
+            this.btnWeek1.Click += new System.EventHandler(this.btnWeek1_Click);
             // 
             // btnMTea
             // 
@@ -158,10 +153,32 @@
             this.grbTeaMenu.Enabled = false;
             this.grbTeaMenu.Location = new System.Drawing.Point(244, 12);
             this.grbTeaMenu.Name = "grbTeaMenu";
-            this.grbTeaMenu.Size = new System.Drawing.Size(431, 441);
+            this.grbTeaMenu.Size = new System.Drawing.Size(431, 450);
             this.grbTeaMenu.TabIndex = 1;
             this.grbTeaMenu.TabStop = false;
             this.grbTeaMenu.Text = "Morning Tea";
+            // 
+            // chkMuffinSwe
+            // 
+            this.chkMuffinSwe.AutoSize = true;
+            this.chkMuffinSwe.Location = new System.Drawing.Point(23, 414);
+            this.chkMuffinSwe.Name = "chkMuffinSwe";
+            this.chkMuffinSwe.Size = new System.Drawing.Size(118, 17);
+            this.chkMuffinSwe.TabIndex = 19;
+            this.chkMuffinSwe.Text = "Muffin - $3 = Sweet";
+            this.chkMuffinSwe.UseVisualStyleBackColor = true;
+            this.chkMuffinSwe.CheckedChanged += new System.EventHandler(this.MTeaCheckBox_Checked);
+            // 
+            // chkBagelTOCAT
+            // 
+            this.chkBagelTOCAT.AutoSize = true;
+            this.chkBagelTOCAT.Location = new System.Drawing.Point(23, 352);
+            this.chkBagelTOCAT.Name = "chkBagelTOCAT";
+            this.chkBagelTOCAT.Size = new System.Drawing.Size(363, 17);
+            this.chkBagelTOCAT.TabIndex = 18;
+            this.chkBagelTOCAT.Text = "Bagel - $4 = Tomato, onion, creamy cheese, avocado and tomato relish";
+            this.chkBagelTOCAT.UseVisualStyleBackColor = true;
+            this.chkBagelTOCAT.CheckedChanged += new System.EventHandler(this.MTeaCheckBox_Checked);
             // 
             // chkSandwichHTELM
             // 
@@ -306,144 +323,10 @@
             this.chkMuffinSav.UseVisualStyleBackColor = true;
             this.chkMuffinSav.CheckedChanged += new System.EventHandler(this.MTeaCheckBox_Checked);
             // 
-            // grbBagel
-            // 
-            this.grbBagel.Controls.Add(this.radioButton8);
-            this.grbBagel.Controls.Add(this.radioButton9);
-            this.grbBagel.Location = new System.Drawing.Point(19, 197);
-            this.grbBagel.Name = "grbBagel";
-            this.grbBagel.Size = new System.Drawing.Size(333, 63);
-            this.grbBagel.TabIndex = 5;
-            this.grbBagel.TabStop = false;
-            // 
-            // radioButton8
-            // 
-            this.radioButton8.AutoSize = true;
-            this.radioButton8.Location = new System.Drawing.Point(6, 35);
-            this.radioButton8.Name = "radioButton8";
-            this.radioButton8.Size = new System.Drawing.Size(302, 17);
-            this.radioButton8.TabIndex = 2;
-            this.radioButton8.TabStop = true;
-            this.radioButton8.Text = "Tomato, onion, creamy cheese, avocado and tomato relish";
-            this.radioButton8.UseVisualStyleBackColor = true;
-            // 
-            // radioButton9
-            // 
-            this.radioButton9.AutoSize = true;
-            this.radioButton9.Location = new System.Drawing.Point(6, 12);
-            this.radioButton9.Name = "radioButton9";
-            this.radioButton9.Size = new System.Drawing.Size(321, 17);
-            this.radioButton9.TabIndex = 1;
-            this.radioButton9.TabStop = true;
-            this.radioButton9.Text = "Smoked salmon, creamy cheese, alfa sprouts and tomato relish";
-            this.radioButton9.UseVisualStyleBackColor = true;
-            // 
-            // grbSandwich
-            // 
-            this.grbSandwich.Controls.Add(this.rbtnCCSA);
-            this.grbSandwich.Controls.Add(this.rbtnVegetarian);
-            this.grbSandwich.Controls.Add(this.rbtnBLT);
-            this.grbSandwich.Controls.Add(this.rbtnBCLO);
-            this.grbSandwich.Controls.Add(this.rbtnHTELM);
-            this.grbSandwich.Enabled = false;
-            this.grbSandwich.Location = new System.Drawing.Point(24, 42);
-            this.grbSandwich.Name = "grbSandwich";
-            this.grbSandwich.Size = new System.Drawing.Size(333, 132);
-            this.grbSandwich.TabIndex = 4;
-            this.grbSandwich.TabStop = false;
-            // 
-            // rbtnCCSA
-            // 
-            this.rbtnCCSA.AutoSize = true;
-            this.rbtnCCSA.Location = new System.Drawing.Point(6, 104);
-            this.rbtnCCSA.Name = "rbtnCCSA";
-            this.rbtnCCSA.Size = new System.Drawing.Size(229, 17);
-            this.rbtnCCSA.TabIndex = 5;
-            this.rbtnCCSA.TabStop = true;
-            this.rbtnCCSA.Text = "Chicken, creamy cheese, salad and apricot";
-            this.rbtnCCSA.UseVisualStyleBackColor = true;
-            // 
-            // rbtnVegetarian
-            // 
-            this.rbtnVegetarian.AutoSize = true;
-            this.rbtnVegetarian.Location = new System.Drawing.Point(6, 81);
-            this.rbtnVegetarian.Name = "rbtnVegetarian";
-            this.rbtnVegetarian.Size = new System.Drawing.Size(316, 17);
-            this.rbtnVegetarian.TabIndex = 4;
-            this.rbtnVegetarian.TabStop = true;
-            this.rbtnVegetarian.Text = "Vegetarian (Egg, tomato, aifa sprouts. cucumber and mustard)";
-            this.rbtnVegetarian.UseVisualStyleBackColor = true;
-            // 
-            // rbtnBLT
-            // 
-            this.rbtnBLT.AutoSize = true;
-            this.rbtnBLT.Location = new System.Drawing.Point(6, 58);
-            this.rbtnBLT.Name = "rbtnBLT";
-            this.rbtnBLT.Size = new System.Drawing.Size(150, 17);
-            this.rbtnBLT.TabIndex = 3;
-            this.rbtnBLT.TabStop = true;
-            this.rbtnBLT.Text = "Bacon, lettuce and tomato";
-            this.rbtnBLT.UseVisualStyleBackColor = true;
-            // 
-            // rbtnBCLO
-            // 
-            this.rbtnBCLO.AutoSize = true;
-            this.rbtnBCLO.Location = new System.Drawing.Point(6, 12);
-            this.rbtnBCLO.Name = "rbtnBCLO";
-            this.rbtnBCLO.Size = new System.Drawing.Size(176, 17);
-            this.rbtnBCLO.TabIndex = 2;
-            this.rbtnBCLO.TabStop = true;
-            this.rbtnBCLO.Text = "Beef, cheese, lettuce and onion";
-            this.rbtnBCLO.UseVisualStyleBackColor = true;
-            // 
-            // rbtnHTELM
-            // 
-            this.rbtnHTELM.AutoSize = true;
-            this.rbtnHTELM.Location = new System.Drawing.Point(6, 35);
-            this.rbtnHTELM.Name = "rbtnHTELM";
-            this.rbtnHTELM.Size = new System.Drawing.Size(199, 17);
-            this.rbtnHTELM.TabIndex = 1;
-            this.rbtnHTELM.TabStop = true;
-            this.rbtnHTELM.Text = "Ham, tomato, egg, lettuce and mayo ";
-            this.rbtnHTELM.UseVisualStyleBackColor = true;
-            // 
-            // grbMuffin
-            // 
-            this.grbMuffin.Controls.Add(this.radioButton2);
-            this.grbMuffin.Controls.Add(this.radioButton1);
-            this.grbMuffin.Location = new System.Drawing.Point(24, 266);
-            this.grbMuffin.Name = "grbMuffin";
-            this.grbMuffin.Size = new System.Drawing.Size(333, 71);
-            this.grbMuffin.TabIndex = 2;
-            this.grbMuffin.TabStop = false;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(6, 42);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(55, 17);
-            this.radioButton2.TabIndex = 2;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Sweet";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(6, 19);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(64, 17);
-            this.radioButton1.TabIndex = 1;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Savoury";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
             // grbLunchMenu
             // 
-            this.grbLunchMenu.Controls.Add(this.grbSandwich);
-            this.grbLunchMenu.Controls.Add(this.grbBagel);
-            this.grbLunchMenu.Controls.Add(this.grbMuffin);
+            this.grbLunchMenu.Controls.Add(this.grbWeek2);
+            this.grbLunchMenu.Controls.Add(this.grbWeek1);
             this.grbLunchMenu.Enabled = false;
             this.grbLunchMenu.Location = new System.Drawing.Point(681, 12);
             this.grbLunchMenu.Name = "grbLunchMenu";
@@ -451,6 +334,85 @@
             this.grbLunchMenu.TabIndex = 2;
             this.grbLunchMenu.TabStop = false;
             this.grbLunchMenu.Text = "Lunch";
+            // 
+            // grbWeek2
+            // 
+            this.grbWeek2.Location = new System.Drawing.Point(6, 193);
+            this.grbWeek2.Name = "grbWeek2";
+            this.grbWeek2.Size = new System.Drawing.Size(367, 214);
+            this.grbWeek2.TabIndex = 7;
+            this.grbWeek2.TabStop = false;
+            this.grbWeek2.Text = "Week 2";
+            // 
+            // grbWeek1
+            // 
+            this.grbWeek1.Controls.Add(this.chkFriday1);
+            this.grbWeek1.Controls.Add(this.chkThursday1);
+            this.grbWeek1.Controls.Add(this.chkWednesday1);
+            this.grbWeek1.Controls.Add(this.chkTuesday1);
+            this.grbWeek1.Controls.Add(this.chkMonday1);
+            this.grbWeek1.Enabled = false;
+            this.grbWeek1.Location = new System.Drawing.Point(6, 19);
+            this.grbWeek1.Name = "grbWeek1";
+            this.grbWeek1.Size = new System.Drawing.Size(367, 155);
+            this.grbWeek1.TabIndex = 6;
+            this.grbWeek1.TabStop = false;
+            this.grbWeek1.Text = "Week 1 ";
+            // 
+            // chkFriday1
+            // 
+            this.chkFriday1.AutoSize = true;
+            this.chkFriday1.Location = new System.Drawing.Point(6, 134);
+            this.chkFriday1.Name = "chkFriday1";
+            this.chkFriday1.Size = new System.Drawing.Size(111, 17);
+            this.chkFriday1.TabIndex = 4;
+            this.chkFriday1.Text = "Friday - Fried Rice";
+            this.chkFriday1.UseVisualStyleBackColor = true;
+            this.chkFriday1.CheckedChanged += new System.EventHandler(this.chkW1_Checked);
+            // 
+            // chkThursday1
+            // 
+            this.chkThursday1.AutoSize = true;
+            this.chkThursday1.Location = new System.Drawing.Point(6, 111);
+            this.chkThursday1.Name = "chkThursday1";
+            this.chkThursday1.Size = new System.Drawing.Size(183, 17);
+            this.chkThursday1.TabIndex = 3;
+            this.chkThursday1.Text = "Thursday - Butter chicken on rice";
+            this.chkThursday1.UseVisualStyleBackColor = true;
+            this.chkThursday1.CheckedChanged += new System.EventHandler(this.chkW1_Checked);
+            // 
+            // chkWednesday1
+            // 
+            this.chkWednesday1.AutoSize = true;
+            this.chkWednesday1.Location = new System.Drawing.Point(6, 88);
+            this.chkWednesday1.Name = "chkWednesday1";
+            this.chkWednesday1.Size = new System.Drawing.Size(195, 17);
+            this.chkWednesday1.TabIndex = 2;
+            this.chkWednesday1.Text = "Wednesday - Macaroni and cheese";
+            this.chkWednesday1.UseVisualStyleBackColor = true;
+            this.chkWednesday1.CheckedChanged += new System.EventHandler(this.chkW1_Checked);
+            // 
+            // chkTuesday1
+            // 
+            this.chkTuesday1.AutoSize = true;
+            this.chkTuesday1.Location = new System.Drawing.Point(6, 65);
+            this.chkTuesday1.Name = "chkTuesday1";
+            this.chkTuesday1.Size = new System.Drawing.Size(186, 17);
+            this.chkTuesday1.TabIndex = 1;
+            this.chkTuesday1.Text = "Tuesday - Pumpkin and feta bake";
+            this.chkTuesday1.UseVisualStyleBackColor = true;
+            this.chkTuesday1.CheckedChanged += new System.EventHandler(this.chkW1_Checked);
+            // 
+            // chkMonday1
+            // 
+            this.chkMonday1.AutoSize = true;
+            this.chkMonday1.Location = new System.Drawing.Point(6, 42);
+            this.chkMonday1.Name = "chkMonday1";
+            this.chkMonday1.Size = new System.Drawing.Size(268, 17);
+            this.chkMonday1.TabIndex = 0;
+            this.chkMonday1.Text = "Monday - Chicken Nuggets with oven baked chips ";
+            this.chkMonday1.UseVisualStyleBackColor = true;
+            this.chkMonday1.CheckedChanged += new System.EventHandler(this.chkW1_Checked);
             // 
             // lblMTeaCost
             // 
@@ -480,28 +442,6 @@
             this.grbList.TabStop = false;
             this.grbList.Text = "Check Out List ";
             // 
-            // chkBagelTOCAT
-            // 
-            this.chkBagelTOCAT.AutoSize = true;
-            this.chkBagelTOCAT.Location = new System.Drawing.Point(23, 352);
-            this.chkBagelTOCAT.Name = "chkBagelTOCAT";
-            this.chkBagelTOCAT.Size = new System.Drawing.Size(363, 17);
-            this.chkBagelTOCAT.TabIndex = 18;
-            this.chkBagelTOCAT.Text = "Bagel - $4 = Tomato, onion, creamy cheese, avocado and tomato relish";
-            this.chkBagelTOCAT.UseVisualStyleBackColor = true;
-            this.chkBagelTOCAT.CheckedChanged += new System.EventHandler(this.MTeaCheckBox_Checked);
-            // 
-            // chkMuffinSwe
-            // 
-            this.chkMuffinSwe.AutoSize = true;
-            this.chkMuffinSwe.Location = new System.Drawing.Point(23, 414);
-            this.chkMuffinSwe.Name = "chkMuffinSwe";
-            this.chkMuffinSwe.Size = new System.Drawing.Size(118, 17);
-            this.chkMuffinSwe.TabIndex = 19;
-            this.chkMuffinSwe.Text = "Muffin - $3 = Sweet";
-            this.chkMuffinSwe.UseVisualStyleBackColor = true;
-            this.chkMuffinSwe.CheckedChanged += new System.EventHandler(this.MTeaCheckBox_Checked);
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -518,13 +458,9 @@
             this.grbLunchSelection.ResumeLayout(false);
             this.grbTeaMenu.ResumeLayout(false);
             this.grbTeaMenu.PerformLayout();
-            this.grbBagel.ResumeLayout(false);
-            this.grbBagel.PerformLayout();
-            this.grbSandwich.ResumeLayout(false);
-            this.grbSandwich.PerformLayout();
-            this.grbMuffin.ResumeLayout(false);
-            this.grbMuffin.PerformLayout();
             this.grbLunchMenu.ResumeLayout(false);
+            this.grbWeek1.ResumeLayout(false);
+            this.grbWeek1.PerformLayout();
             this.grbList.ResumeLayout(false);
             this.grbList.PerformLayout();
             this.ResumeLayout(false);
@@ -541,20 +477,8 @@
         private System.Windows.Forms.Button btnMTea;
         private System.Windows.Forms.GroupBox grbTeaMenu;
         private System.Windows.Forms.GroupBox grbLunchMenu;
-        private System.Windows.Forms.GroupBox grbMuffin;
         private System.Windows.Forms.CheckBox chkMuffinSav;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.GroupBox grbSandwich;
-        private System.Windows.Forms.RadioButton rbtnBCLO;
-        private System.Windows.Forms.RadioButton rbtnHTELM;
         private System.Windows.Forms.CheckBox chkBagelSCAT;
-        private System.Windows.Forms.GroupBox grbBagel;
-        private System.Windows.Forms.RadioButton radioButton8;
-        private System.Windows.Forms.RadioButton radioButton9;
-        private System.Windows.Forms.RadioButton rbtnCCSA;
-        private System.Windows.Forms.RadioButton rbtnVegetarian;
-        private System.Windows.Forms.RadioButton rbtnBLT;
         private System.Windows.Forms.CheckBox chkCRolls;
         private System.Windows.Forms.CheckBox chkCPuff;
         private System.Windows.Forms.CheckBox chkBrownie;
@@ -571,5 +495,12 @@
         private System.Windows.Forms.CheckBox chkSandwichCCSA;
         private System.Windows.Forms.CheckBox chkMuffinSwe;
         private System.Windows.Forms.CheckBox chkBagelTOCAT;
+        private System.Windows.Forms.GroupBox grbWeek1;
+        private System.Windows.Forms.GroupBox grbWeek2;
+        private System.Windows.Forms.CheckBox chkFriday1;
+        private System.Windows.Forms.CheckBox chkThursday1;
+        private System.Windows.Forms.CheckBox chkWednesday1;
+        private System.Windows.Forms.CheckBox chkTuesday1;
+        private System.Windows.Forms.CheckBox chkMonday1;
     }
 }
