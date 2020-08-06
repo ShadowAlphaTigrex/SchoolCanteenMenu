@@ -61,10 +61,16 @@
             this.lblMTeaCost = new System.Windows.Forms.Label();
             this.lbCOItems = new System.Windows.Forms.ListBox();
             this.grbList = new System.Windows.Forms.GroupBox();
+            this.chkMonday2 = new System.Windows.Forms.CheckBox();
+            this.chkTuesday2 = new System.Windows.Forms.CheckBox();
+            this.chkWednesday2 = new System.Windows.Forms.CheckBox();
+            this.chkThursday2 = new System.Windows.Forms.CheckBox();
+            this.chkFriday2 = new System.Windows.Forms.CheckBox();
             this.grbSelectMenu.SuspendLayout();
             this.grbLunchSelection.SuspendLayout();
             this.grbTeaMenu.SuspendLayout();
             this.grbLunchMenu.SuspendLayout();
+            this.grbWeek2.SuspendLayout();
             this.grbWeek1.SuspendLayout();
             this.grbList.SuspendLayout();
             this.SuspendLayout();
@@ -330,16 +336,22 @@
             this.grbLunchMenu.Enabled = false;
             this.grbLunchMenu.Location = new System.Drawing.Point(681, 12);
             this.grbLunchMenu.Name = "grbLunchMenu";
-            this.grbLunchMenu.Size = new System.Drawing.Size(394, 600);
+            this.grbLunchMenu.Size = new System.Drawing.Size(394, 450);
             this.grbLunchMenu.TabIndex = 2;
             this.grbLunchMenu.TabStop = false;
             this.grbLunchMenu.Text = "Lunch";
             // 
             // grbWeek2
             // 
-            this.grbWeek2.Location = new System.Drawing.Point(6, 193);
+            this.grbWeek2.Controls.Add(this.chkFriday2);
+            this.grbWeek2.Controls.Add(this.chkThursday2);
+            this.grbWeek2.Controls.Add(this.chkWednesday2);
+            this.grbWeek2.Controls.Add(this.chkTuesday2);
+            this.grbWeek2.Controls.Add(this.chkMonday2);
+            this.grbWeek2.Enabled = false;
+            this.grbWeek2.Location = new System.Drawing.Point(6, 239);
             this.grbWeek2.Name = "grbWeek2";
-            this.grbWeek2.Size = new System.Drawing.Size(367, 214);
+            this.grbWeek2.Size = new System.Drawing.Size(367, 160);
             this.grbWeek2.TabIndex = 7;
             this.grbWeek2.TabStop = false;
             this.grbWeek2.Text = "Week 2";
@@ -352,7 +364,7 @@
             this.grbWeek1.Controls.Add(this.chkTuesday1);
             this.grbWeek1.Controls.Add(this.chkMonday1);
             this.grbWeek1.Enabled = false;
-            this.grbWeek1.Location = new System.Drawing.Point(6, 19);
+            this.grbWeek1.Location = new System.Drawing.Point(6, 55);
             this.grbWeek1.Name = "grbWeek1";
             this.grbWeek1.Size = new System.Drawing.Size(367, 155);
             this.grbWeek1.TabIndex = 6;
@@ -408,9 +420,9 @@
             this.chkMonday1.AutoSize = true;
             this.chkMonday1.Location = new System.Drawing.Point(6, 42);
             this.chkMonday1.Name = "chkMonday1";
-            this.chkMonday1.Size = new System.Drawing.Size(268, 17);
+            this.chkMonday1.Size = new System.Drawing.Size(266, 17);
             this.chkMonday1.TabIndex = 0;
-            this.chkMonday1.Text = "Monday - Chicken Nuggets with oven baked chips ";
+            this.chkMonday1.Text = "Monday - Chicken nuggets with oven baked chips ";
             this.chkMonday1.UseVisualStyleBackColor = true;
             this.chkMonday1.CheckedChanged += new System.EventHandler(this.chkW1_Checked);
             // 
@@ -435,18 +447,73 @@
             // 
             this.grbList.Controls.Add(this.lbCOItems);
             this.grbList.Controls.Add(this.lblMTeaCost);
-            this.grbList.Location = new System.Drawing.Point(12, 209);
+            this.grbList.Location = new System.Drawing.Point(1081, 15);
             this.grbList.Name = "grbList";
-            this.grbList.Size = new System.Drawing.Size(226, 403);
+            this.grbList.Size = new System.Drawing.Size(226, 253);
             this.grbList.TabIndex = 3;
             this.grbList.TabStop = false;
             this.grbList.Text = "Check Out List ";
+            // 
+            // chkMonday2
+            // 
+            this.chkMonday2.AutoSize = true;
+            this.chkMonday2.Location = new System.Drawing.Point(6, 46);
+            this.chkMonday2.Name = "chkMonday2";
+            this.chkMonday2.Size = new System.Drawing.Size(263, 17);
+            this.chkMonday2.TabIndex = 1;
+            this.chkMonday2.Text = "Monday - Chicken nuggets with oven baked chips";
+            this.chkMonday2.UseVisualStyleBackColor = true;
+            this.chkMonday2.CheckedChanged += new System.EventHandler(this.chkW2_Checked);
+            // 
+            // chkTuesday2
+            // 
+            this.chkTuesday2.AutoSize = true;
+            this.chkTuesday2.Location = new System.Drawing.Point(6, 69);
+            this.chkTuesday2.Name = "chkTuesday2";
+            this.chkTuesday2.Size = new System.Drawing.Size(248, 17);
+            this.chkTuesday2.TabIndex = 2;
+            this.chkTuesday2.Text = "Tuesday - Bacon, egg, potato, and spinach pie";
+            this.chkTuesday2.UseVisualStyleBackColor = true;
+            this.chkTuesday2.CheckedChanged += new System.EventHandler(this.chkW2_Checked);
+            // 
+            // chkWednesday2
+            // 
+            this.chkWednesday2.AutoSize = true;
+            this.chkWednesday2.Location = new System.Drawing.Point(6, 92);
+            this.chkWednesday2.Name = "chkWednesday2";
+            this.chkWednesday2.Size = new System.Drawing.Size(133, 17);
+            this.chkWednesday2.TabIndex = 3;
+            this.chkWednesday2.Text = "Wednesday - Lasagne";
+            this.chkWednesday2.UseVisualStyleBackColor = true;
+            this.chkWednesday2.CheckedChanged += new System.EventHandler(this.chkW2_Checked);
+            // 
+            // chkThursday2
+            // 
+            this.chkThursday2.AutoSize = true;
+            this.chkThursday2.Location = new System.Drawing.Point(6, 115);
+            this.chkThursday2.Name = "chkThursday2";
+            this.chkThursday2.Size = new System.Drawing.Size(248, 17);
+            this.chkThursday2.TabIndex = 4;
+            this.chkThursday2.Text = "Thursday - Meatballs on tomato sauce with rice";
+            this.chkThursday2.UseVisualStyleBackColor = true;
+            this.chkThursday2.CheckedChanged += new System.EventHandler(this.chkW2_Checked);
+            // 
+            // chkFriday2
+            // 
+            this.chkFriday2.AutoSize = true;
+            this.chkFriday2.Location = new System.Drawing.Point(6, 138);
+            this.chkFriday2.Name = "chkFriday2";
+            this.chkFriday2.Size = new System.Drawing.Size(319, 17);
+            this.chkFriday2.TabIndex = 5;
+            this.chkFriday2.Text = "Friday - Chicken or beef burgers with tomato relish and cheese";
+            this.chkFriday2.UseVisualStyleBackColor = true;
+            this.chkFriday2.CheckedChanged += new System.EventHandler(this.chkW2_Checked);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1144, 626);
+            this.ClientSize = new System.Drawing.Size(1481, 494);
             this.Controls.Add(this.grbList);
             this.Controls.Add(this.grbLunchMenu);
             this.Controls.Add(this.grbTeaMenu);
@@ -459,6 +526,8 @@
             this.grbTeaMenu.ResumeLayout(false);
             this.grbTeaMenu.PerformLayout();
             this.grbLunchMenu.ResumeLayout(false);
+            this.grbWeek2.ResumeLayout(false);
+            this.grbWeek2.PerformLayout();
             this.grbWeek1.ResumeLayout(false);
             this.grbWeek1.PerformLayout();
             this.grbList.ResumeLayout(false);
@@ -502,5 +571,10 @@
         private System.Windows.Forms.CheckBox chkWednesday1;
         private System.Windows.Forms.CheckBox chkTuesday1;
         private System.Windows.Forms.CheckBox chkMonday1;
+        private System.Windows.Forms.CheckBox chkFriday2;
+        private System.Windows.Forms.CheckBox chkThursday2;
+        private System.Windows.Forms.CheckBox chkWednesday2;
+        private System.Windows.Forms.CheckBox chkTuesday2;
+        private System.Windows.Forms.CheckBox chkMonday2;
     }
 }

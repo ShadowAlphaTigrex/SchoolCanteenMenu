@@ -16,14 +16,17 @@ namespace SchoolCanteenMenu
         string textToShow;
         CheckBox[] currentChk = new CheckBox[15];
         CheckBox[] W1currentChk = new CheckBox[5];
+        CheckBox[] W2currentChk = new CheckBox[5];
         //RadioButton sandwichChoice = new RadioButton();
         int[] cost = { 4, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 3, 3};
         int[] W1cost = { 5, 5, 5, 5, 5};
+        int[] W2cost = { 5, 5, 5, 5, 5 };
         int sum = 0;
 
         //Declaring a new list
         List<CheckBox> SelectedMenu = new List<CheckBox>();
         List<CheckBox> W1SelectedMenu = new List<CheckBox>();
+        List<CheckBox> W2SelectedMenu = new List<CheckBox>();
 
         public Form2(string textData)
         {
@@ -55,6 +58,11 @@ namespace SchoolCanteenMenu
             W1currentChk[3] = chkThursday1;
             W1currentChk[4] = chkFriday1;
 
+            W2currentChk[0] = chkMonday2;
+            W2currentChk[1] = chkTuesday2;
+            W2currentChk[2] = chkWednesday2;
+            W2currentChk[3] = chkThursday2;
+            W2currentChk[4] = chkFriday2;
 
             /* int indexCRolls = Array.IndexOf(currentChk, chkCRolls);
              int indexSPinwheel = Array.IndexOf(currentChk, chkSPinwheel);
@@ -179,9 +187,50 @@ namespace SchoolCanteenMenu
             if (W1SelectedMenu.Count > 1)
             {
                 //Displays the message box for error
-                MessageBox.Show("Only select 1 item1.");
+                MessageBox.Show("Only select 1 item.");
                 //After message box is closed, it'll automatically unselect the checkboxes
                 W1current.Checked = false;
+            }
+            //If not, nothing happens.
+            else
+            {
+            }
+        }
+
+        private void chkW2_Checked(object sender, EventArgs e)
+        {
+            CheckBox W2current = sender as CheckBox;
+            int indexW2current = Array.IndexOf(W2currentChk, W2current);
+            int W2price = W2cost[indexW2current];
+
+            if (W2current.Checked)
+            {
+                //When it's checked, the current (selected) checkbox will be added in a list 
+                W2SelectedMenu.Add(W2current);
+                //Displays the items in a list box 
+                lbCOItems.Items.Add(W2current.Text);
+                //It'll add the item's cost
+                sum = W2price + sum;
+                //Display the total cost of the selected items
+                lblMTeaCost.Text = "\r\n" + "$" + sum.ToString();
+            }
+            else
+            {
+                //When it's unchecked, the current (unselected) checkbox will be remove from the list 
+                W2SelectedMenu.Remove(W2current);
+                //Removes the unselected item from the list box 
+                lbCOItems.Items.Remove(W2current.Text);
+                //It'll subtract the item's cost so it only display the selected item's total cost
+                sum = sum - W2price;
+                lblMTeaCost.Text = "\r\n" + "$" + sum.ToString();
+            }
+
+            if (W2SelectedMenu.Count > 1)
+            {
+                //Displays the message box for error
+                MessageBox.Show("Only select 1 item.");
+                //After message box is closed, it'll automatically unselect the checkboxes
+                W2current.Checked = false;
             }
             //If not, nothing happens.
             else
