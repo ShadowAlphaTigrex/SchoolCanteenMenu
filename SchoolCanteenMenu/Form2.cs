@@ -14,9 +14,9 @@ namespace SchoolCanteenMenu
     public partial class Form2 : Form
     {
         string textToShow;
-        CheckBox[] currentChk = new CheckBox[9];
-
-        int[] cost = { 4, 3, 3, 3, 3, 3, 4, 4, 3};
+        CheckBox[] currentChk = new CheckBox[15];
+        //RadioButton sandwichChoice = new RadioButton();
+        int[] cost = { 4, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 3, 3};
         int sum = 0;
 
         //Declaring a new list
@@ -37,9 +37,17 @@ namespace SchoolCanteenMenu
             currentChk[3] = chkSlice;
             currentChk[4] = chkBrownie;
             currentChk[5] = chkCPuff;
-            currentChk[6] = chkSandwich;
-            currentChk[7] = chkBagel;
-            currentChk[8] = chkMuffin;
+            currentChk[6] = chkSandwichBCLO;
+            currentChk[7] = chkSandwichHTELM;
+            currentChk[8] = chkSandwichBLT;
+            currentChk[9] = chkSandwichVege;
+            currentChk[10] = chkSandwichCCSA;
+            currentChk[11] = chkBagelSCAT;
+            currentChk[12] = chkBagelTOCAT;
+            currentChk[13] = chkMuffinSav;
+            currentChk[14] = chkMuffinSwe;
+
+
 
 
             /* int indexCRolls = Array.IndexOf(currentChk, chkCRolls);
@@ -70,7 +78,7 @@ namespace SchoolCanteenMenu
         }
 
 
-        private void MTeaCheckBox_Checked(object sender, EventArgs e)
+        public void MTeaCheckBox_Checked(object sender, EventArgs e)
         {
             //The checkboxes that are checked are called "current"
             CheckBox current = sender as CheckBox;
@@ -116,38 +124,40 @@ namespace SchoolCanteenMenu
             else
             {  
             }
+           
+        }
+
+       /* private void chkSandwich_Checked(object sender, EventArgs e)
+        {
             
             if (chkSandwich.Checked)
             {
-                grbSandwich.Enabled = true;
+                grbSandwich.Enabled= true;
             }
             else
             {
                 grbSandwich.Enabled = false;
             }
-
-            if (chkBagel.Checked)
-            {
-                grbBagel.Enabled = true;
-            }
-            else
-            {
-                grbBagel.Enabled = false;
-            }
-
-            if (chkMuffin.Checked)
-            {
-                grbMuffin.Enabled = true;
-            }
-            else
-            {
-                grbMuffin.Enabled = false;
-            }
         }
 
-       
+        public void SandwichRbtn_Checked(object sender, EventArgs e)
+        {
+            RadioButton sanchoice = sender as RadioButton;
+            if (sanchoice.Checked)
+            {
+                lbCOItems.Items.Add("Sandwich - $4 =" + sanchoice.Text);
+            }
+            else
+            {
+                lbCOItems.Items.Remove("Sandwich - $4 =" + sanchoice.Text);
+            }
+        } */
 
         
+
+
+
+
 
 
 
