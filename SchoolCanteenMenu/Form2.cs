@@ -79,6 +79,7 @@ namespace SchoolCanteenMenu
             //enabled and the Lunch Week Selection group box is not visible
             grbTeaMenu.Enabled = true;
             grbLunchSelection.Enabled = false;
+            grbLunchMenu.Enabled = false;
         }
 
         private void btnLunch_Click(object sender, EventArgs e)
@@ -127,7 +128,7 @@ namespace SchoolCanteenMenu
                 //It'll add the item's cost
                 sum = price + sum;
                 //Display the total cost of the selected items
-                lblMTeaCost.Text = "\r\n" + "$" + sum.ToString();
+                lblTotalCost.Text = "\r\n" + "$" + sum.ToString();
             }
             //If it's not, then it'll be remove from the list. 
             else
@@ -138,7 +139,7 @@ namespace SchoolCanteenMenu
                 lbCOItems.Items.Remove(current.Text);
                 //It'll subtract the item's cost so it only display the selected item's total cost
                 sum = sum - price;
-                lblMTeaCost.Text = "\r\n" + "$" + sum.ToString();
+                lblTotalCost.Text = "\r\n" + "$" + sum.ToString();
             }
 
            //When the list has more than 3, the message box will show an error.
@@ -171,7 +172,7 @@ namespace SchoolCanteenMenu
                 //It'll add the item's cost
                 sum = W1price + sum;
                 //Display the total cost of the selected items
-                lblMTeaCost.Text = "\r\n" + "$" + sum.ToString();
+                lblTotalCost.Text = "\r\n" + "$" + sum.ToString();
             }
             else
             {
@@ -181,7 +182,7 @@ namespace SchoolCanteenMenu
                 lbCOItems.Items.Remove(W1current.Text);
                 //It'll subtract the item's cost so it only display the selected item's total cost
                 sum = sum - W1price;
-                lblMTeaCost.Text = "\r\n" + "$" + sum.ToString();
+                lblTotalCost.Text = "\r\n" + "$" + sum.ToString();
             }
 
             if (W1SelectedMenu.Count > 1)
@@ -212,7 +213,7 @@ namespace SchoolCanteenMenu
                 //It'll add the item's cost
                 sum = W2price + sum;
                 //Display the total cost of the selected items
-                lblMTeaCost.Text = "\r\n" + "$" + sum.ToString();
+                lblTotalCost.Text = "\r\n" + "$" + sum.ToString();
             }
             else
             {
@@ -222,7 +223,7 @@ namespace SchoolCanteenMenu
                 lbCOItems.Items.Remove(W2current.Text);
                 //It'll subtract the item's cost so it only display the selected item's total cost
                 sum = sum - W2price;
-                lblMTeaCost.Text = "\r\n" + "$" + sum.ToString();
+                lblTotalCost.Text = "\r\n" + "$" + sum.ToString();
             }
 
             if (W2SelectedMenu.Count > 1)
@@ -234,6 +235,24 @@ namespace SchoolCanteenMenu
             }
             //If not, nothing happens.
             else
+            {
+            }
+        }
+
+        private void btnCheckOut_Click(object sender, EventArgs e)
+        {
+            string TimeslotItems = "";
+            foreach (string s in lbCOItems.Items)
+            {
+                TimeslotItems += s + "\r\n"; // /n to print each item on new line or you omit /n to print text on same line
+            }
+
+            DialogResult dialogResult = MessageBox.Show("Confirm your order?" + "\r\n" + TimeslotItems + "\r\n" + "Total Cost =" + "\r\n" + lblTotalCost.Text, "Checkout", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                MessageBox.Show("Pick up at the canteen" + "\r\n" + "Morning Tea, at 10.50AM" + "\r\n" + "Lunch, at 1PM");
+            }
+            else if ( dialogResult == DialogResult.No)
             {
             }
         }
