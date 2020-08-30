@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.txtName = new System.Windows.Forms.TextBox();
-            this.txtTutorClass = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnSignIn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.cmbTClass = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,13 +44,6 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(193, 20);
             this.txtName.TabIndex = 0;
-            // 
-            // txtTutorClass
-            // 
-            this.txtTutorClass.Location = new System.Drawing.Point(80, 175);
-            this.txtTutorClass.Name = "txtTutorClass";
-            this.txtTutorClass.Size = new System.Drawing.Size(193, 20);
-            this.txtTutorClass.TabIndex = 1;
             // 
             // label1
             // 
@@ -87,11 +80,11 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmbTClass);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtName);
             this.groupBox1.Controls.Add(this.btnSignIn);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtTutorClass);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -112,6 +105,14 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Bayfield Canteen Menu";
             // 
+            // cmbTClass
+            // 
+            this.cmbTClass.FormattingEnabled = true;
+            this.cmbTClass.Location = new System.Drawing.Point(80, 165);
+            this.cmbTClass.Name = "cmbTClass";
+            this.cmbTClass.Size = new System.Drawing.Size(193, 21);
+            this.cmbTClass.TabIndex = 6;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -122,6 +123,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.TransparencyKey = System.Drawing.Color.Lime;
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -131,12 +133,12 @@
         #endregion
 
         private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.TextBox txtTutorClass;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnSignIn;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cmbTClass;
     }
 }
 

@@ -23,10 +23,12 @@ namespace TESTLOL
         private void button1_Click(object sender, EventArgs e)
         {
             
-            for (int i = 0; i> tutorClass.Length; i++)
+            for (int i = 0; i< tutorClass.Length; i++)
             {
                 comboBox1.Items.Add(tutorClass[i]);
             }
+
+            
         }
     }
 }

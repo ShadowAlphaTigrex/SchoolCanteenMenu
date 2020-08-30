@@ -12,23 +12,32 @@ namespace SchoolCanteenMenu
 {
     public partial class Form1 : Form
     {
+        string[] tutorClass = { "ABH", "AJF", "AHB", "AWA", "BSA", "BLA", "BRI", "BGW", "HKA", "HML", "HMD", "HKI", "RWT", "RTH", "RHR", "RBN", "SMN", "SRO", "SDG", "SDA" };
+    
         public Form1()
         {
             InitializeComponent();
+           
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            for (int i = 0; i < tutorClass.Length; i++)
+            {
+                cmbTClass.Items.Add(tutorClass[i]);
+            }
         }
 
         private void btnSignIn_Click(object sender, EventArgs e)
         {
             //Declaring the variables
             string name;
-            string tutorclass;
             name = txtName.Text;
-            tutorclass = txtTutorClass.Text;
+          
 
             string textToSend = name;
 
-            //When the textbox is not filled, it'll show an error message box//
-            if (txtName.Text == "" || txtTutorClass.Text == "" )
+            //When the name textbox is not filled and the tutor class is not selected from the combobox, it'll show an error message box//
+            if (txtName.Text == ""||cmbTClass.Items.Count ==0 )
             {
                 MessageBox.Show("Please Enter Student Name and Tutor Class");
             }
@@ -41,7 +50,9 @@ namespace SchoolCanteenMenu
                 this.Close();
 
             }
-       
+      
         }
+
+       
     }
 }
