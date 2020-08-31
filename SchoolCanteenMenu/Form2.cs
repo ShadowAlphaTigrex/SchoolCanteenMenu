@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SchoolCanteenMenu
@@ -18,8 +11,8 @@ namespace SchoolCanteenMenu
         CheckBox[] W1currentChk = new CheckBox[5];
         CheckBox[] W2currentChk = new CheckBox[5];
         //RadioButton sandwichChoice = new RadioButton();
-        int[] cost = { 4, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 3, 3};
-        int[] W1cost = { 5, 5, 5, 5, 5};
+        int[] cost = { 4, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 3, 3 };
+        int[] W1cost = { 5, 5, 5, 5, 5 };
         int[] W2cost = { 5, 5, 5, 5, 5 };
         int sum = 0;
 
@@ -94,7 +87,7 @@ namespace SchoolCanteenMenu
 
         private void btnWeek1_Click(object sender, EventArgs e)
         {
-          
+
             grbWeek1.Enabled = true;
             grbWeek2.Enabled = false;
 
@@ -116,8 +109,8 @@ namespace SchoolCanteenMenu
             int indexcurrent = Array.IndexOf(currentChk, current);
             //Declaring the variable for cost
             int price = cost[indexcurrent];
-           
-           
+
+
             //When it's checked, the selected items will be added in a list 
             if (current.Checked)
             {
@@ -142,7 +135,7 @@ namespace SchoolCanteenMenu
                 lblTotalCost.Text = "\r\n" + "$" + sum.ToString();
             }
 
-           //When the list has more than 3, the message box will show an error.
+            //When the list has more than 3, the message box will show an error.
             if (SelectedMenu.Count > 3)
             {
                 //Displays the message box for error
@@ -152,9 +145,9 @@ namespace SchoolCanteenMenu
             }
             //If not, nothing happens.
             else
-            {  
+            {
             }
-           
+
         }
 
         public void chkW1_Checked(object sender, EventArgs e)
@@ -247,12 +240,12 @@ namespace SchoolCanteenMenu
                 TimeslotItems += s + "\r\n"; // /n to print each item on new line or you omit /n to print text on same line
             }
 
-            DialogResult dialogResult = MessageBox.Show("Confirm your order?" + "\r\n" + TimeslotItems + "\r\n" + "Total Cost =" + "\r\n" + lblTotalCost.Text, "Checkout", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Confirm your order?" + "\r\n" + "\r\n" + textToShow + "\r\n" + "\r\n" + "Ordered:" + "\r\n" + TimeslotItems + "\r\n" + "Total Cost =" + lblTotalCost.Text, "Checkout", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 MessageBox.Show("Pick up at the canteen" + "\r\n" + "Morning Tea, at 10.50AM" + "\r\n" + "Lunch, at 1PM");
             }
-            else if ( dialogResult == DialogResult.No)
+            else if (dialogResult == DialogResult.No)
             {
             }
         }
@@ -317,13 +310,6 @@ namespace SchoolCanteenMenu
          */
 
     }
-           
-           
-       
-       
-
-     
-           
 
 
 
@@ -332,26 +318,33 @@ namespace SchoolCanteenMenu
 
 
 
-        /*List<int> numbers = new List<int>();
-        int[] array = new int[] { 1, 2, 3 };
 
 
 
 
 
-        for (int i=0; i< 6; i++)
+
+
+    /*List<int> numbers = new List<int>();
+    int[] array = new int[] { 1, 2, 3 };
+
+
+
+
+
+    for (int i=0; i< 6; i++)
+    {
+        if (currentChk[i].Checked == true && currentChk[i].Enabled)
         {
-            if (currentChk[i].Checked == true && currentChk[i].Enabled)
-            {
-                string food = currentChk[i].Text;
-                int indexOfFood = Array.IndexOf(currentChk, food);
-                int foodCost = cost [i];
-                lblMTea.Text = food;
-                lblMTeaCost.Text = foodCost.ToString();
-            }
+            string food = currentChk[i].Text;
+            int indexOfFood = Array.IndexOf(currentChk, food);
+            int foodCost = cost [i];
+            lblMTea.Text = food;
+            lblMTeaCost.Text = foodCost.ToString();
         }
-        */
+    }
+    */
 
 
-    
+
 }

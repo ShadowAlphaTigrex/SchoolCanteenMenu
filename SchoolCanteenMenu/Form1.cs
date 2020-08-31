@@ -34,10 +34,10 @@ namespace SchoolCanteenMenu
             name = txtName.Text;
           
 
-            string textToSend = name;
+            string textToSend = "Student Info:" + "\r\n" + name +  "\r\n" + cmbTClass.Text;
 
             //When the name textbox is not filled and the tutor class is not selected from the combobox, it'll show an error message box//
-            if (txtName.Text == ""||cmbTClass.Items.Count ==0 )
+            if (txtName.Text == ""||cmbTClass.Text=="")
             {
                 MessageBox.Show("Please Enter Student Name and Tutor Class");
             }
@@ -45,7 +45,7 @@ namespace SchoolCanteenMenu
             else
             {
                 this.Hide();
-                Form2 f2 = new Form2(name);
+                Form2 f2 = new Form2(textToSend);
                 f2.ShowDialog();
                 this.Close();
 
